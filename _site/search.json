@@ -1,0 +1,267 @@
+[
+  
+    {
+
+      "title"    : "Mentoring nomination 🏆",
+      "description" : "",
+      "url"      : "/2022/11/01/mentoring",
+      "category" : "",
+      "tags"     : "mentoring, support, software, development, data",
+      "date"     : "2022-11-01 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "RESTful APIs and Postman",
+      "description" : "",
+      "url"      : "/2022/11/01/apis-and-postman",
+      "category" : "",
+      "tags"     : "API, RESTful, endpoint",
+      "date"     : "2022-11-01 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "Manorial Documents Register Party!🥳",
+      "description" : "",
+      "url"      : "/2022/06/29/mdr-celebration",
+      "category" : "",
+      "tags"     : "records, data, legislation, archives",
+      "date"     : "2022-06-29 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Forms",
+      "description" : "",
+      "url"      : "/2022/06/29/forms",
+      "category" : "",
+      "tags"     : ".NET, C#, web, development",
+      "date"     : "2022-06-29 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Text Analytics Legislation",
+      "description" : "",
+      "url"      : "/2022/04/01/text-analytics-legislation",
+      "category" : "",
+      "tags"     : "legal, informatics, statutes, legislation, data",
+      "date"     : "2022-04-01 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Model View Controller note",
+      "description" : "",
+      "url"      : "/2021/05/16/model-view-controller",
+      "category" : "",
+      "tags"     : "patterns, application, layers",
+      "date"     : "2021-05-16 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Amazon Web Services topology",
+      "description" : "",
+      "url"      : "/2021/04/11/aws-toplogy",
+      "category" : "",
+      "tags"     : "AWS, vpc, subnet",
+      "date"     : "2021-04-11 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Machine learning statute laws",
+      "description" : "",
+      "url"      : "/2021/02/12/machine-learning-statutes",
+      "category" : "",
+      "tags"     : "NER, machine, learning, data",
+      "date"     : "2021-02-12 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "Use case decriptions",
+      "description" : "",
+      "url"      : "/2020/08/11/use-cases",
+      "category" : "",
+      "tags"     : "object-oriented, use-case, diagram, UML",
+      "date"     : "2020-08-11 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Key constraints",
+      "description" : "",
+      "url"      : "/2020/08/11/key-constraints",
+      "category" : "",
+      "tags"     : "maths, databases, functions",
+      "date"     : "2020-08-11 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Counting and multiplying",
+      "description" : "",
+      "url"      : "/2020/08/11/counting-multiplying",
+      "category" : "",
+      "tags"     : "pseudocode, algorithms, maths",
+      "date"     : "2020-08-11 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Basic refactoring",
+      "description" : "",
+      "url"      : "/2020/08/11/basic-refactoring",
+      "category" : "",
+      "tags"     : "programming, statments, C#",
+      "date"     : "2020-08-11 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Cyber security policy",
+      "description" : "",
+      "url"      : "/2020/05/25/security-policy",
+      "category" : "",
+      "tags"     : "security, policy, cyber, legal",
+      "date"     : "2020-05-25 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Building XML and XSLT",
+      "description" : "",
+      "url"      : "/2020/05/25/xml-xslt",
+      "category" : "",
+      "tags"     : "XML, XSLT",
+      "date"     : "2020-05-25 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "O-O class modeling",
+      "description" : "",
+      "url"      : "/2020/05/25/oo-class-modelling",
+      "category" : "",
+      "tags"     : "object oriented architectural modeling",
+      "date"     : "2020-05-25 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Class associations",
+      "description" : "",
+      "url"      : "/2020/05/25/class-associations",
+      "category" : "",
+      "tags"     : "class, object",
+      "date"     : "2020-05-25 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Attributes for a person class",
+      "description" : "",
+      "url"      : "/2019/12/01/attributes-for-a-person-class",
+      "category" : "",
+      "tags"     : "",
+      "date"     : "2019-12-01 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "Z notation",
+      "description" : "",
+      "url"      : "/2019/02/20/z-notation",
+      "category" : "",
+      "tags"     : "Z, notation, logic, math, specification",
+      "date"     : "2019-02-20 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "UIs of yore",
+      "description" : "",
+      "url"      : "/2019/02/20/uis-of-yore",
+      "category" : "",
+      "tags"     : "modeling, dialogue, user, interfaces",
+      "date"     : "2019-02-20 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "Activity and sequence architecture",
+      "description" : "",
+      "url"      : "/2018/08/12/acitivty-and-sequence",
+      "category" : "",
+      "tags"     : "software, behavior, diagram, flow",
+      "date"     : "2018-08-12 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "SOAP 🧼 API development",
+      "description" : "",
+      "url"      : "/2018/05/21/soap-api-notes",
+      "category" : "",
+      "tags"     : "API, service, requests, XML",
+      "date"     : "2018-05-21 00:00:00 +0100"
+
+    } ,
+  
+    {
+
+      "title"    : "Relational Algebra",
+      "description" : "",
+      "url"      : "/2018/03/08/relational-algebra",
+      "category" : "",
+      "tags"     : "logic, contraints, specification, SQL",
+      "date"     : "2018-03-08 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "State legal contraints",
+      "description" : "",
+      "url"      : "/2018/03/07/states",
+      "category" : "",
+      "tags"     : "state, machine, legal",
+      "date"     : "2018-03-07 00:00:00 +0000"
+
+    } ,
+  
+    {
+
+      "title"    : "My Leadership Award 🎉",
+      "description" : "",
+      "url"      : "/2016/04/15/leadership-award",
+      "category" : "",
+      "tags"     : "knowledge, management, information, IT",
+      "date"     : "2016-04-15 00:00:00 +0100"
+
+    } 
+  
+]

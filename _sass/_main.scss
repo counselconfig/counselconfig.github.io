@@ -1,0 +1,482 @@
+*,:after,:before {
+	box-sizing:border-box;
+	background-color:inherit;
+	color:inherit;
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+	line-height:1.5;
+	font-size: 1rem;
+	color: rgb(22, 23, 26);
+}
+
+nav ul {
+    border-right: 1px solid #edf2f7;
+}
+
+a {
+    color: #000;
+    text-decoration-skip-ink: auto;
+    text-decoration: underline;
+}
+
+pre {
+	margin: .5rem 0;
+	padding: .5rem;
+}
+
+.post p {
+	margin: .5rem 0;
+}
+
+.post h1, .post h2, .post h3, .post h4 {
+	margin: 1rem 0;
+}
+
+.post h2:first-child, .project h2:first-child, .photo h2:first-child {
+	margin-top: 0;
+}
+
+.meta {
+	margin: 2rem 0;
+}
+
+/*code,pre {
+	background: rgb(236, 237, 238);
+} remove grey highlighting*/
+
+code {
+	padding: .1rem;
+}
+
+pre code {
+	border: none;
+}
+
+pre {
+	padding: 1rem;
+	overflow-x: auto;
+}
+
+img {
+	max-width:100%;
+}
+
+hr {
+	background: #000;
+    height: 1px;
+    border: 0;
+}
+
+header {
+	flex-basis:10rem;
+	flex-grow:1;
+	position:relative;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header li {
+	margin-bottom: .2rem;
+	text-align: right;
+	margin-right: 2rem;
+}
+
+header a.active {
+	font-weight: bold;
+}
+
+header,section {
+	padding:1rem;
+}
+
+blockquote {
+	font-style: italic;
+    border-left: 5px solid #ececec;
+    padding-left: 1rem;
+}
+
+h1,h2,h3,h4,h5 {
+	line-height: 1;
+	margin: 1rem 0;
+	font-weight: 600;
+}
+
+section h1:first-child {
+	margin-top: 0;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+.photos ul {
+	list-style: none;
+}
+
+.photos li {
+	margin-bottom: 1.5rem;
+}
+
+.photo picture, .project picture {
+	margin-bottom: 0.5rem;
+}
+
+.posts ul,header ul {
+	list-style:none;
+}
+
+.posts li {
+	align-items:center;
+	display:flex;
+	justify-content:space-between;
+	margin-bottom: .5rem;
+}
+
+.posts li a, .posts li div, .projects li a {
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	text-decoration: none;
+}
+
+.posts li time, .projects li time {
+	padding-left: 1rem;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+.post ul, .project ul, .post ol  {
+	//list-style-position: inside;
+}
+
+main {
+	display:flex;
+	flex-wrap:wrap;
+	max-width:60rem;
+	margin:10rem auto;
+	padding:1rem;
+}
+
+
+@media screen and (max-width: 45rem ) {
+header li {
+    display: inline;
+	margin-right: 1rem;
+}
+.logo {
+	padding-bottom: 1rem;
+}
+header ul {
+	border-bottom: 1px solid #edf2f7;
+	padding-bottom: 2rem;	
+}
+nav ul {
+    border-right: 0px;
+}
+
+.photos ul {
+	margin-top: 0.5rem;
+}
+
+}
+
+section {
+	flex-basis:0;
+	flex-grow:999;
+	min-width:70%;
+	display:flex;
+	flex-direction:column;
+	
+}
+
+figcaption {
+    font-size: smaller;
+}
+
+
+
+
+
+
+
+//sass-code-highlight-master
+
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+  background: #fff;
+}
+.highlighter-rouge .highlight {
+  background: #eef;
+}
+.highlight .c {
+  color: #998;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .k {
+  font-weight: bold;
+}
+.highlight .o {
+  font-weight: bold;
+}
+.highlight .cm {
+  color: #998;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #998;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+.highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+.highlight .ge {
+  font-style: italic;
+}
+.highlight .gr {
+  color: #a00;
+}
+.highlight .gh {
+  color: #999;
+}
+.highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+.highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+.highlight .go {
+  color: #888;
+}
+.highlight .gp {
+  color: #555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaa;
+}
+.highlight .gt {
+  color: #a00;
+}
+.highlight .kc {
+  font-weight: bold;
+}
+.highlight .kd {
+  font-weight: bold;
+}
+.highlight .kp {
+  font-weight: bold;
+}
+.highlight .kr {
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #458;
+  font-weight: bold;
+}
+.highlight .m {
+  color: #099;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #458;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #900;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #900;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbb;
+}
+.highlight .mf {
+  color: #099;
+}
+.highlight .mh {
+  color: #099;
+}
+.highlight .mi {
+  color: #099;
+}
+.highlight .mo {
+  color: #099;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .bp {
+  color: #999;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .il {
+  color: #099;
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  color: #3f3f3f;
+  border-collapse: collapse;
+  border: 1px solid #e8e8e8;
+}
+table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+table th, table td {
+  padding: 10px 15px;
+}
+table th {
+  background-color: #f0f0f0;
+  border: 1px solid #dedede;
+  border-bottom-color: #c9c9c9;
+}
+table td {
+  border: 1px solid #e8e8e8;
+}
+
+
+

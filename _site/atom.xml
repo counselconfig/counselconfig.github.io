@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>counsel.config</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2023-02-22T00:32:42+00:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Mentoring nomination 🏆</title>
+   <link href="http://localhost:4000/2022/11/01/mentoring"/>
+   <updated>2022-11-01T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2022/11/01/Mentoring</id>
+   <content type="html">&lt;p&gt;I am a software engineering mentor both in my private consultancy and in my role at the Civil Service, on a range of software deveopment and data science projects. I am delighted to have been given this letter notifying my department that I be considered for a nomination reward!&lt;/p&gt;
+
+&lt;style&gt;
+img {
+  border: 1px solid #555;
+}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/mentoring.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Should you like to recieve mentoring please get in touch with me.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>RESTful APIs and Postman</title>
+   <link href="http://localhost:4000/2022/11/01/apis-and-postman"/>
+   <updated>2022-11-01T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2022/11/01/APIs-and-Postman</id>
+   <content type="html">&lt;h3 id=&quot;api-in-basic-terms&quot;&gt;API in basic terms&lt;/h3&gt;
+
+&lt;p&gt;An Application Programing Interface (API) is essentially a well defined method of communicating with a ‘service’. This means that a service provides a server to which a request can be sent and the server will answer with well defined responses, in accordance with an API specification.&lt;/p&gt;
+
+&lt;h3 id=&quot;rest-api&quot;&gt;REST API&lt;/h3&gt;
+
+&lt;p&gt;A representational state transfer (REST) API has an architecture which when compliant with REST contraints are coined RESTful, making use of web standards like HTML, JSON XML.&lt;/p&gt;
+
+&lt;p&gt;I said this would be a basic discusion, so all that we should know about RESTful APIs is that there are four types of actions that are used to communicate with it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;: A get action means we ask the service for data - we will check this out later.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt;: This action is typically used to create data in the service.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PUT&lt;/code&gt;: This action is used to update already existing data&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DELETE&lt;/code&gt;: This action is used to delete existing data&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sending-parameters-and-arguments-to-a-restful-service&quot;&gt;Sending parameters and arguments to a RESTful service.&lt;/h3&gt;
+
+&lt;p&gt;A REST request typically has three parts: The URL we are sending the request to, the HEADER of the request (which normally holds basic properties of the request), and in the BODY of the request.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For examples of arguments sent in the URL, a &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; action sent to a website selling cats at &lt;ins&gt;www.catsforsale.co.uk/user/1234&lt;/ins&gt; could be a way to ask for information about user with 1234, and if we also want a list of all their cats 🐱, we might do so by sending the &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; request to &lt;ins&gt;www.catsforsale.co.uk/user/1234?include_cats=true&lt;/ins&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The header is sent along with the request - normally, in a browser, the request header is unseen since it is managed by the browser. Now, this is where &lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://www.postman.com/&quot;&gt;Postman&lt;/a&gt; comes in handy as it lwil let us edit the header.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;postman&quot;&gt;Postman&lt;/h3&gt;
+
+&lt;p&gt;I will demonstrate &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; requests with Postman using two real APIs, namely SmartSurvey and Eventbrite.&lt;/p&gt;
+
+&lt;h3 id=&quot;smartsurvey-api&quot;&gt;SmartSurvey API&lt;/h3&gt;
+
+&lt;p&gt;The SmartSurvey API does not require  extra HEADER parameters, which means it be queried using a browser of a preference. Two authentication keys are needed to send a ‘call’ this service, viz: an ‘api_token’, and an ‘api_token_secret’, to let the server know the query can be trusted by an authenticated user. The a target=’_blank’ rel=’noopener’ href=’https://docs.smartsurvey.io/docs’&amp;gt;Smart Survey documentation&amp;lt;/a&amp;gt; explains how to obtain these tokens.&lt;/p&gt;
+
+&lt;p&gt;There are two endpoints with the SmartSurvey API&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. https://api.smartsurvey.io/v1/surveys&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The first endpoint above returns a list of all the surveys created. It requires the “api_token” and “api_token_secret” as parameters and two optional parameters for paginating the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;page_size&lt;/code&gt; - this specifies how many service should be returned in each call.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;page&lt;/code&gt; - this specifies which page to return.&lt;/p&gt;
+
+&lt;p&gt;i.e. if &lt;code class=&quot;highlighter-rouge&quot;&gt;page_size=100&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;page=1&lt;/code&gt;, we get the first 100 surveys. Changing page to page=2 gets us the next 100 surveys and so forth. If &lt;code class=&quot;highlighter-rouge&quot;&gt;page_size&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;page&lt;/code&gt; are not specified we get 1 survey (the latest). Note this service does not use the header, we can test this in any browser, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://api.smartsurvey.io/v1/surveys?api_token=[api_token]&amp;amp;api_token_secret=[api_token_secret]&amp;amp;page_size=100&amp;amp;page=1&quot;&gt;https://api.smartsurvey.io/v1/surveys?api_token=[api_token]&amp;amp;api_token_secret=[api_token_secret]&amp;amp;page_size=100&amp;amp;page=1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. https://api.smartsurvey.io/v1/surveys/[survey_id]/responses&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The second type above returns all  responses to the specific survey specified by the &lt;code class=&quot;highlighter-rouge&quot;&gt;survey_id&lt;/code&gt;. It takes the same parameters as previously listed (&lt;code class=&quot;highlighter-rouge&quot;&gt;api_token&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;api_token_secret&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;page_size&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;page&lt;/code&gt;). It also takes an extra parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;include_labels&lt;/code&gt; - this should be set as &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; as without it the questions and responses will be absent with only question and answer IDs present) e.g. to get the first 100 survey responses for survey ID 421142, open the following link in a browser:&lt;/p&gt;
+
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://api.smartsurvey.io/v1/surveys/421142/responses?api_token=[api_token]&amp;amp;api_token_secret=[api_token_secret]&amp;amp;include_labels=true&amp;amp;page_size=100&amp;amp;page=1&quot;&gt;https://api.smartsurvey.io/v1/surveys/421142/responses?api_token=[api_token]&amp;amp;api_token_secret=[api_token_secret]&amp;amp;include_labels=true&amp;amp;page_size=100&amp;amp;page=1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;query-smartsurvey-api-with-postman&quot;&gt;Query SmartSurvey API with Postman&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add URL request in the URL text field with the “action” on the left is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;) and press send!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;embed src=&quot;/assets/images/ss_postman.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;h4 id=&quot;smartsurvey-api-basic-authentication&quot;&gt;SmartSurvey API Basic Authentication&lt;/h4&gt;
+
+&lt;p&gt;SmartSurvey supported querystring parameters as exampled above but as of today these are now deprecated and all requests should switch to using Basic Auth. Instead of adding the API Token and Token Secret as parameters in the GET request URL, they take the form of a &lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;password&lt;/code&gt; respectively, which are passed to the header instead à la below:&lt;/p&gt;
+
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://api.smartsurvey.io/v1/surveys/421142/responses?include_labels=true&amp;amp;page_size=100&amp;amp;page=1&quot;&gt;https://api.smartsurvey.io/v1/surveys/421142/responses?include_labels=true&amp;amp;page_size=100&amp;amp;page=1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;eventbrite-api&quot;&gt;Eventbrite API&lt;/h3&gt;
+
+&lt;p&gt;This is the &lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;eventbrite.com/platform/api&quot;&gt;documentation for the Eventbrite API&lt;/a&gt;. Authentication in Eventbrite differs from Smart Survey as it is achieved by sending the authentication keys in the &lt;code class=&quot;highlighter-rouge&quot;&gt;HEADER&lt;/code&gt;, which means we need to use Postman by adding a key-value pair in the “Headers” tab, with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Key&lt;/code&gt; = “Authorization”&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Value&lt;/code&gt; = “Bearer [private token]”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Check the documetion on how to retrieve your private token&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/eb_postman.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;p&gt;N.B Eventbrite handles pagination differently than SmartSurvey. As per above the result starts with a “pagination” object with pages count information and a “continuation” code. To get the next page, send the same request again, but with an extra &lt;code class=&quot;highlighter-rouge&quot;&gt;“continuation&lt;/code&gt; parameter set (in my case &lt;code class=&quot;highlighter-rouge&quot;&gt;eyJwYWdlIjogMn0&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;eventbrite-api-endpoints&quot;&gt;Eventbrite API endpoints&lt;/h3&gt;
+
+&lt;p&gt;There are many endpoints with Eventbrite API. Here are two:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. https://www.eventbriteapi.com/v3/organizations/0123456789/events?expand=organizer,venue&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This returns all events that an organisation has ever created (the number 0123456789 for instance would be the organisation ID):&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. https://www.eventbriteapi.com/v3/organizations/1234561011/events?expand=organizer,venue&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The second enpoint above calls and returns all tickets attached to an event with additional information about attendees - as shown in Postman below:&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/eb2_postman.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;p&gt;Pagination information shown and then a list of all the orders for that event.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Manorial Documents Register Party!🥳</title>
+   <link href="http://localhost:4000/2022/06/29/mdr-celebration"/>
+   <updated>2022-06-29T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2022/06/29/MDR-Celebration</id>
+   <content type="html">&lt;p&gt;I lead the data integration project for the English and Welsh ONLINE Manorial Documents Register (MDR) and attended a private reception at the Royal Courts of Justice to mark its completion today, along with 100 years of the Law of Propety Act 1925.&lt;/p&gt;
+
+&lt;p&gt;The MDR is an index of English and Welsh manorial records, providing brief descriptions of documents and details of their locations in public and private hands.. Here’s a link to the online developed register &lt;a href=&quot;https://discovery.nationalarchives.gov.uk/manor-search&quot;&gt;MDR Discovery The National Archives&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here was my rather big invitation that I recieved from the &lt;a href=&quot;https://www.judiciary.uk/about-the-judiciary/who-are-the-judiciary/judges/profile-mor/&quot;&gt;Master of the Rolls&lt;/a&gt;&lt;/p&gt;
+
+&lt;style&gt;
+img {
+  border: 1px solid #555;
+}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/MDR2022.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Arriving at the Painted Room, no sign of Sir Geoffrey Vos and Jeff James…yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rcjreception.jpg&quot; alt=&quot;RCJreception&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Forms</title>
+   <link href="http://localhost:4000/2022/06/29/forms"/>
+   <updated>2022-06-29T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2022/06/29/Forms</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Text Analytics Legislation</title>
+   <link href="http://localhost:4000/2022/04/01/text-analytics-legislation"/>
+   <updated>2022-04-01T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2022/04/01/Text-Analytics-Legislation</id>
+   <content type="html">&lt;p&gt;This is a study of logical connectives in British legislation.&lt;/p&gt;
+
+&lt;p&gt;Full report is below 👇&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/lcituksb/index.htm&quot; width=&quot;1050&quot; height=&quot;21880&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Model View Controller note</title>
+   <link href="http://localhost:4000/2021/05/16/model-view-controller"/>
+   <updated>2021-05-16T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2021/05/16/Model-View-Controller</id>
+   <content type="html">&lt;p&gt;The Model-View-Controller (MVC) is a well known software pattern to architect an entire appplication - here are some notes about it.&lt;/p&gt;
+
+&lt;p&gt;MVC can be acheived with ASP.NET Core to partition the required layers (Troelsen &amp;amp; Japikse, 2020)&lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. The MVC handles the bidirectional communications with a user of a graphical interface via a ‘controller’. The controller is a broker in the business layer to handle input for a ‘model’ at the data layer behaving as the state for a rendered ‘view’ at the presentation layer (Parson, 2020). Because an MVC derives from O-O programming (Thakur &amp;amp; Pandey, 2019)&lt;sup id=&quot;fnref:fn2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, it also made a suitable ASP.NET Core architecture for object creation, following Figure 1.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/layeredmvc.svg&quot; width=&quot;60%&quot; height=&quot;60%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Layered and tiered MVC architecture - adapted from Dissanayake &amp;amp; Dias (2017) and Liu &amp;amp; Gupta (2019)&lt;sup id=&quot;fnref:fn3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:fn4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;This model was a real product I developed for an online hardware shop, note that tiers are not synonymous with layers. They are both architectures typically divided thrice, but the former relates to the physical deployment and the latter to the repository structure (Esposito &amp;amp; Saltarello, 2014)&lt;sup id=&quot;fnref:fn5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;. MVC initiation can be found in the &lt;code class=&quot;highlighter-rouge&quot;&gt;startup.cs&lt;/code&gt; public class method &lt;code class=&quot;highlighter-rouge&quot;&gt;services.AddControllersWithViews();&lt;/code&gt;. This brings into effect the layers: &lt;code class=&quot;highlighter-rouge&quot;&gt;Controllers&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewModels&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Models&lt;/code&gt;. The decision to have a viewmodel was created as a way to contain listed transitory categorised hardware data that could be constructed in a &lt;code class=&quot;highlighter-rouge&quot;&gt;HardwareController&lt;/code&gt; first and then passed to the &lt;code class=&quot;highlighter-rouge&quot;&gt;HardwareListViewModel&lt;/code&gt; at the presentation layer:&lt;/p&gt;
+
+&lt;div class=&quot;language-c# highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;MVC_DL.ViewModels&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HardwareListViewModel&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IEnumerable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Hardware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Hardwares&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CurrentCategory&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is an architecture often associated with Model-View-ViewModel scaffolding where &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewModel&lt;/code&gt; represents the &lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt; state with changeable data (Kouraklis, 2016)&lt;sup id=&quot;fnref:fn6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thge MVC is not a static artifact, but rather a kinetic system - bekiw is a portrayal.&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/mvcpipeline.svg&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Figure 2 ASP.NET MVC Pipeline Request Lifecycle - adapted from Simple Talk (2011)&lt;/i&gt;&lt;/center&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Troelsen, A. &amp;amp; Japikse, P., 2020. MVC Applications with ASP.NET Core. In: Pro C# 8 with .NET Core 3. Berkeley, CA:Apress. &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Thakur, R. N. &amp;amp; Pandey, U. S., 2019. The Role of Model-View Controller in Object Oriented Software Development.. Nepal Journal of Multidisciplinary Research, 2(2), pp. 1-6. &lt;a href=&quot;#fnref:fn2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Dissanayake, N. R. &amp;amp; Dias, G. . K. A., 2017. Balanced Abstract Web-MVC Style: An Abstract MVC Implementation for Web-based Applications. GSTF Journal on Computing (JoC), 5(3), pp. 27-41. &lt;a href=&quot;#fnref:fn3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Liu, Z. &amp;amp; Gupta, B., 2019. Study of Secured Full-Stack Web Development. Honolulu, Hawaii, USA, Proceedings of 34th International Conference on Computers and Their Applications, p. 317–324. &lt;a href=&quot;#fnref:fn4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Esposito, D. &amp;amp; Saltarello, A., 2014. Microsoft .NET - Architecting Applications for the Enterprise. Second ed. Redmond, Washington: Microsoft Press. &lt;a href=&quot;#fnref:fn5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Kouraklis, J., 2016. MVVM in Delphi: Architecting and Building Model View ViewModel Applications. London, United Kingdom: Apress. &lt;a href=&quot;#fnref:fn6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Amazon Web Services topology</title>
+   <link href="http://localhost:4000/2021/04/11/aws-toplogy"/>
+   <updated>2021-04-11T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2021/04/11/AWS-Toplogy</id>
+   <content type="html">&lt;h3 id=&quot;use-case&quot;&gt;Use case&lt;/h3&gt;
+
+&lt;p&gt;I dealt with a client, an SME print company called PrintIT wanting a solution to harness its expansive sales via improved infrastructure and, eventually, geographically with different offices to off-load parts of its workflow.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/exisitingarch.svg&quot; width=&quot;50%&quot; height=&quot;50%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Figure 1 Exisiting physical architecture&lt;/i&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;proposed-aws-architecture&quot;&gt;Proposed AWS architecture&lt;/h3&gt;
+
+&lt;p&gt;Advice given was that PrintIT should replatform as a migration strategy with the possibility for hybrid migration retention on some components like the exchange server. As an SME, PrintIT should be guided by a stepwise framework for migration along the lines of Khan and Al-Yasiri (2015)&lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, which involves: ‘requirements’ – market study, and a likely choice of IaaS; ‘preparation’ – including a feasibility study, readiness questionnaire, and close looks at risks; and, ‘migration – assessing costs and contracts, testing deployments, and monitoring.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/propawstopology.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 2 VPC topology&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;configuration-setup&quot;&gt;Configuration setup&lt;/h3&gt;
+
+&lt;p&gt;To provision a new bespoke VPC for our client PrintIT, IAM is required with a root account for business should be set up. A new user ‘principal’ should be created and added to a new group associated with the Administrator Access policy document à la:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2012-10-17&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Statement&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Effect&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Allow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Action&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Resource&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mapping the problem domain to AWS offerings was carried out under the Rabetski (2011)&lt;sup id=&quot;fnref:fn1:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; process.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;vpc&quot;&gt;VPC&lt;/h3&gt;
+
+&lt;p&gt;A VPC is a service listed in the AWS Management Console which when selected can be initiated with a setup assistant interface via ‘Launch VPC Wizard’. It will exist alongside the default VPC:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/defaultvpc.svg&quot; alt=&quot;defaultvpc.&quot; title=&quot;Defaulat VPC&quot; /&gt;
+&lt;em&gt;Figure 3 Default VPC&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The VPC is configured with ‘Public and Private Subnets’ at Step 1 which creates a /16 network with two /24 subnets. The private subnet cannot reach the internet through a NAT and the public subnets access it using elastic IP’s.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;subnets&quot;&gt;Subnets&lt;/h3&gt;
+
+&lt;p&gt;Subnets by way of exmaplt could be AZ us-east-1a and 1b US East (N. Virginia) but in production, PrintIT should likely use local region eu-west2, EU (London) to reduce latency. VPC User Guide (2020) recommends a maximum CIDR block ./16 from private IPv4 meaning 10.0.0.0 - 10.255.255.255 (10/8 prefix) is used: RFC 1918 (Rekhter, et al.)&lt;sup id=&quot;fnref:fn3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. The NAT gateway was given a public elastic IP with an ID. Additional public and private subnets are created in AZ ‘b’. Two pairs of private and public subnets provide high availability across multiple AZs promoted by the Reliability Pillar of the AWS Well-Architected Framework (Piper &amp;amp; Clinton, 2019, p. 191)&lt;sup id=&quot;fnref:fn4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. As the VPC Wizard creates only one NAT gateway for Public Subnet 1, a second was created.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/subnets.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 4 Created subnets&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;routing&quot;&gt;Routing&lt;/h3&gt;
+
+&lt;p&gt;The NAT gateways send packets to the internet which requires the private and public subnets to be configured to route internet bound traffic to them using an associated route table.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/vpcsubnets.svg&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Figure 5 VPC with Public and Private Subnets in Two AZ’s&lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;em&gt;Table 1 Routes for Private and Public Subnets&lt;/em&gt;&lt;/p&gt;
+
+&lt;style&gt;
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+&lt;/style&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Subnets&lt;/th&gt;
+    &lt;th&gt;Destination&lt;/th&gt;
+    &lt;th&gt;Target&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Public&lt;/td&gt;
+    &lt;td&gt;10.0.0.0/16&lt;/td&gt;
+    &lt;td&gt;Local&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Public&lt;/td&gt;
+    &lt;td&gt;0.0.0.0/0&lt;/td&gt;
+    &lt;td&gt;Internet Gateway&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Private&lt;/td&gt;
+    &lt;td&gt;10.0.0.0/16&lt;/td&gt;
+    &lt;td&gt;Localy&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Private&lt;/td&gt;
+    &lt;td&gt;0.0.0.0/0&lt;/td&gt;
+    &lt;td&gt;NAT Gateway&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;security-groups-ec2-instances-and-rds-db-instances&quot;&gt;Security groups, EC2 instances, and RDS DB instances&lt;/h3&gt;
+
+&lt;p&gt;A ‘security group’ was created to behave as a stateful firewall on the EC2 instances as web servers to regulate port access, IP authorised ranges, inbound, and outbound network traffic. Then a ‘Dedicated’ Windows Server OS was used to launch and eventually host IIS as a web server. Next an AMI was created and stored in the Print IT VPC and the instance is deleted from the public subnet as production will use AMIs in private subnets. For the database, a security group was created to allow packets from the Web Security Group. A database subnet group was configured to instruct the forthcoming RDS what subnets to utilise. A MS SQL database was chosen - data from PrintIT’s Access database can undergo ETL after its instantiation. The option for logging performance information for CloudWatch was selected too. The RDS instance was also replicated for Multi-AZ deployment to be highly available under production loads.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/deployedrds.svg&quot; width=&quot;50%&quot; height=&quot;50%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Figure 6 Deployed RDS&lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;load-balancing-and-scaling&quot;&gt;Load balancing and scaling&lt;/h3&gt;
+
+&lt;p&gt;A load balancer was created to spread traffic across AZs and the EC2 instances that will be launched into private subnets with the database servers, routing requests to targets using HTTP port 80. Next, Auto Scaling, which comprises a Launch Configuration, Auto Scaling group, and non-compulsory scaling policy. AMI Web Server 1 could be used to launch the configuration - the autoscaling group was set to start with two instances in Private Subnet 1 (10.0.1.0/24) and Private Subnet 2 (10.0.3.0/24). As regards scaling policies, for the EC2’s, Print IT may be given a scale between two and six instances with average CPU use at 60.&lt;/p&gt;
+
+&lt;p&gt;an opportunity also exists to attach EBS root volumes to the Windows ECS instances to store the image files and to take routine snapshots of them as backups. They will be replicated automatically within its AZ for durability ideally as General Purpose SSD and can be provisioned with the following CloudFormation in a comparable manner as in the code below&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;Resources&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;EBSBackupVolumeA&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;AWS::EC2::Volume'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Properties&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;AvailabilityZone&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;!Select&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;!GetAZs&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;Size&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;VolumeType&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gp2&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;EBSBackupVolumeAttachmentA&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;AWS::EC2::VolumeAttachment'&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;Properties&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Device&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/dev/xvdf'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;InstanceId&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;!Ref&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;EC2InstanceA&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;VolumeId&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;!Ref&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;EBSBackupVolumeA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Khan and Al-Yasiri, 2015. Framework for cloud computing adoption: A road map for Smes to cloud migration, International Journal on Cloud Computing: Services and Architecture (IJCCSA) Vol. 5, No. 5/6 &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:fn1:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Rekhter, Y. et al., February 1996. RFC 1918: Address Allocation for Private Internets, s.l.: Network Working Group IETF &lt;a href=&quot;#fnref:fn3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Piper, B. &amp;amp; Clinton, D., 2019. AWS Certified Solutions Architect Study Guide: Associate SAA-C01 Exam. Second ed. Indianapolis: John Wiley &amp;amp; Sons. &lt;a href=&quot;#fnref:fn4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Machine learning statute laws</title>
+   <link href="http://localhost:4000/2021/02/12/machine-learning-statutes"/>
+   <updated>2021-02-12T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2021/02/12/Machine-learning-statutes</id>
+   <content type="html">&lt;p&gt;Below I have documented my work training a customuised NER model based on the Law of Property Act 1925 with a Kaggle Jupyter notebook.&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/lcituksb/model.htm&quot; width=&quot;1050&quot; height=&quot;116120&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Use case decriptions</title>
+   <link href="http://localhost:4000/2020/08/11/use-cases"/>
+   <updated>2020-08-11T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/08/11/Use-cases</id>
+   <content type="html">&lt;p&gt;A note to show how to convert use descriptions into object-oriented use case diagrams - abstract taken from a report I worked on for a hardware company:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/usecases.svg&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Key constraints</title>
+   <link href="http://localhost:4000/2020/08/11/key-constraints"/>
+   <updated>2020-08-11T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/08/11/Key-Constraints</id>
+   <content type="html">&lt;p&gt;I wrote this section of a report that provides a mathematical approach to constraining keys in a relational database.&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/keyconstraints/keyconstraints.htm&quot; width=&quot;1050&quot; height=&quot;1900&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Counting and multiplying</title>
+   <link href="http://localhost:4000/2020/08/11/counting-multiplying"/>
+   <updated>2020-08-11T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/08/11/Counting-Multiplying</id>
+   <content type="html">&lt;p&gt;How does one count? It interests me that something seemingly so simple as counting, which we do by rote memorary, really demands some thinking about to understand how it works just so it can run on a computer. But I have this - remembering the four properties of an algorithm i.e.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Unique initialisation&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Unique succession&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Finiteness&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Solution&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;here is how to count in pseudocode!
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/count.svg&quot; width=&quot;70%&quot; height=&quot;70%&quot; /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Now, supringsly, I find it easier and shorter to write an algorithm for multiplication. Bearing in mind, computers pretend to multiply by still adding numbers, but just in loops à la below.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/times.svg&quot; width=&quot;70%&quot; height=&quot;70%&quot; /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+Here is a trace of the TIMES alogrithm of the values &lt;em&gt;prod&lt;/em&gt; and &lt;em&gt;u&lt;/em&gt; everytime it enters the &lt;strong&gt;&lt;em&gt;repeat…endrepeat&lt;/em&gt;&lt;/strong&gt; construct:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;prod&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;39&lt;/td&gt;
+      &lt;td&gt;52&lt;/td&gt;
+      &lt;td&gt;65&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;em&gt;u&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The notion here is that the algorithm multiplies x = 5 by y =13.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Basic refactoring</title>
+   <link href="http://localhost:4000/2020/08/11/basic-refactoring"/>
+   <updated>2020-08-11T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/08/11/Basic-refactoring</id>
+   <content type="html">&lt;p&gt;Plain statements &lt;code class=&quot;highlighter-rouge&quot;&gt;For&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Foreach&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;While&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Do&lt;/code&gt; each achieve different means to an end - but how should they be written? As in how once they be refactored in line with common dev commmunuity standards? Here is a lowdown:&lt;/p&gt;
+
+&lt;h1 id=&quot;for&quot;&gt;For&lt;/h1&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Implementation&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use short but meaningful names to represent loop variables. Use single letter variables only where the code within the 2. loop is simple and a few lines long.&lt;/li&gt;
+  &lt;li&gt;The expressions within a for statement must be separated by whitespace to aid clarity.&lt;/li&gt;
+  &lt;li&gt;Always use braces with a for loop, even if there is only one line of code within the loop.&lt;/li&gt;
+  &lt;li&gt;The loop counter must not be modified within the loop.&lt;/li&gt;
+  &lt;li&gt;The loop upper limit must not be modified within the loop.&lt;/li&gt;
+  &lt;li&gt;Avoid using the comma operator within a for loop. Instead use separate statements before the loop (for additional initialisation) and at the end of the loop (for additional iteration).&lt;/li&gt;
+  &lt;li&gt;Best Practice: try to pre-evaluate the condition expression into a variable if possible. For example:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someDataSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SomeTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;could be improved with:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somedataSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SomeTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rowCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;++)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If the loop is being used to find or evaluate a particular condition, when the condition is met the loop should exit immediately using a break statement.&lt;/p&gt;
+
+&lt;h1 id=&quot;foreach&quot;&gt;Foreach&lt;/h1&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DisplayNameList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// display name &lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use short but meaningful names to represent loop variables. Do not use single letter variables.&lt;/li&gt;
+  &lt;li&gt;The loop variable must not be modified within the loop.&lt;/li&gt;
+  &lt;li&gt;The array/collection being enumerated must not be modified.&lt;/li&gt;
+  &lt;li&gt;Always use braces with a foreach loop, even if there is only one line of code within the loop.&lt;/li&gt;
+  &lt;li&gt;If the loop is being used to find or evaluate a particular condition, when the condition is met the loop must stop using a break statement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;while&quot;&gt;While&lt;/h1&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DisplayArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// display string at index         index++; &lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use for loops or foreach loops in preference to while-loops.&lt;/li&gt;
+  &lt;li&gt;Use braces with a while-loop, even if there is only one line of code within the loop.&lt;/li&gt;
+  &lt;li&gt;There must be a single space between the while keyword and the opening parenthesis.&lt;/li&gt;
+  &lt;li&gt;If the loop is being used to find or evaluate a particular condition, when the condition is met the loop must stop using a break statement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;do&quot;&gt;Do&lt;/h1&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DisplayArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;// display string at index         index++; &lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use for loops or foreach loops in preference to do loops.&lt;/li&gt;
+  &lt;li&gt;Use braces with a do-loop, even if there is only one line of code within the loop.&lt;/li&gt;
+  &lt;li&gt;The while statement appears on the same line as the closing brace.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cyber security policy</title>
+   <link href="http://localhost:4000/2020/05/25/security-policy"/>
+   <updated>2020-05-25T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/05/25/security-policy</id>
+   <content type="html">&lt;p&gt;Research into what cyber security policies are, what challenges they pose to business, and the legal enforcement challenges they bring&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/cyberops/Cyber_Operations_Part_A.htm&quot; width=&quot;1050&quot; height=&quot;11700&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building XML and XSLT</title>
+   <link href="http://localhost:4000/2020/05/25/xml-xslt"/>
+   <updated>2020-05-25T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/05/25/XML-XSLT</id>
+   <content type="html">&lt;p&gt;Using XSLT to tranform XML to XHMT.&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/xsltransform.svg&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Process overview&lt;/i&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;forming-the-xml&quot;&gt;Forming the XML&lt;/h1&gt;
+
+&lt;p&gt;When an XML document complies with the rules of its syntactical structure it is said to be ‘well-formed’, according to the WS3. The XML document I form comes with a specification to implement.&lt;/p&gt;
+
+&lt;p&gt;I create database schema in SQL for a library called Porterhouse, starting with a single book table with test data.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;STRUCTURE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FOR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Book&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Book`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Book`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`ISBN`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`Title`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AvgLoan_4y`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AvgRequest_4y`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AuthorFName`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AuthorSName`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`Publisher_Name`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`Publishing_Date`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`Edition`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`Volumes`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddressline1`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddressline2`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddresscode`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`ContactTelephone`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`ISBN`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARSET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8_unicode_ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Book`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`ISBN`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Title`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgLoan_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgRequest_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AuthorFName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AuthorSName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publisher_Name`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publishing_Date`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Edition`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Volumes`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddressline1`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddressline2`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddresscode`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`ContactTelephone`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'978-2-8691-4951-9'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Deleniti'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Reyna'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bailey'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Larson-Schultz'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'1985-08-08'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'29348 Walsh View Suite 364'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Koelpinbury'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'54944-8088'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'09999508834'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Book`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`ISBN`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Title`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgLoan_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgRequest_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AuthorFName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AuthorSName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publisher_Name`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publishing_Date`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Edition`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Volumes`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddressline1`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddressline2`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddresscode`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`ContactTelephone`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'978-2-5076-0558-2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Est'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Ramona'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Williamson'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Jast-Simonis'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'1984-04-03'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'092 Keebler Freeway'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Alanischester'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'32519-2138'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'649-
+867-3233'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Book`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`ISBN`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Title`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgLoan_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AvgRequest_4y`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`AuthorFName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`AuthorSName`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publisher_Name`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Publishing_Date`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Edition`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`Volumes`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;`PAddressline1`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddressline2`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`PAddresscode`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`ContactTelephone`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'978-1-5357-4263-4'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Velit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Pablo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Leuschke'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Sipes and Sons'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1979-
+10-02'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'899 Daugherty Brooks'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Stellastad'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'27145'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'(604)992-042'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I feed this data to an online XML converter where I can rename the output root and child elements of the document to PorterhouseLibrary and Book respectively. The foregoing code shows a well-formed XML document with comments against the five conforming areas: A root element, closing tags, elements properly nested, case matched, and values.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 5 value &quot;&quot; quoted --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;PorterhouseLibrary&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 1 Root element--&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;Book&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 3 nested--&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;ISBN&amp;gt;&lt;/span&gt; 978-2-8691-4951-9&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ISBN&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Title&amp;gt;&lt;/span&gt;Deleniti&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Title&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgLoan_4y&amp;gt;&lt;/span&gt;20&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgLoan_4y&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgRequest_4y&amp;gt;&lt;/span&gt;12&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgRequest_4y&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorFName&amp;gt;&lt;/span&gt;Reyna&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorFName&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorSName&amp;gt;&lt;/span&gt;Bailey&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorSName&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publisher_Name&amp;gt;&lt;/span&gt;Larson-Schultz&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publisher_Name&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publishing_Date&amp;gt;&lt;/span&gt;1985-08-08&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publishing_Date&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Edition&amp;gt;&lt;/span&gt;3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Edition&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Volumes&amp;gt;&lt;/span&gt;9&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Volumes&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline1&amp;gt;&lt;/span&gt;29348 Walsh View Suite 364&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline1&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline2&amp;gt;&lt;/span&gt;Koelpinbury&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline2&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddresscode&amp;gt;&lt;/span&gt;54944-8088&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddresscode&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContactTelephone&amp;gt;&lt;/span&gt;09999508834&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContactTelephone&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Book&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 2 closing tag--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Book&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;ISBN&amp;gt;&lt;/span&gt; 978-2-5076-0558-2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ISBN&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Title&amp;gt;&lt;/span&gt;Est&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Title&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgLoan_4y&amp;gt;&lt;/span&gt;18&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgLoan_4y&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgRequest_4y&amp;gt;&lt;/span&gt;10&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgRequest_4y&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorFName&amp;gt;&lt;/span&gt;Ramona&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorFName&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorSName&amp;gt;&lt;/span&gt;Williamson&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorSName&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publisher_Name&amp;gt;&lt;/span&gt;Jast-Simonis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publisher_Name&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publishing_Date&amp;gt;&lt;/span&gt;1984-04-03&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publishing_Date&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Edition&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Edition&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;Volumes&amp;gt;&lt;/span&gt;4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Volumes&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline1&amp;gt;&lt;/span&gt;092 Keebler Freeway&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline1&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline2&amp;gt;&lt;/span&gt;Alanischester&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline2&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddresscode&amp;gt;&lt;/span&gt;32519-2138&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddresscode&amp;gt;&lt;/span&gt;
+	 &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContactTelephone&amp;gt;&lt;/span&gt;649-867-3233&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContactTelephone&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Book&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 4 Case sensitive, always B for Book --&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;Book&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;ISBN&amp;gt;&lt;/span&gt; 978-1-5357-4263-4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ISBN&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Title&amp;gt;&lt;/span&gt;Velit&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Title&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgLoan_4y&amp;gt;&lt;/span&gt;6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgLoan_4y&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AvgRequest_4y&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AvgRequest_4y&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorFName&amp;gt;&lt;/span&gt;Pablo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorFName&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;AuthorSName&amp;gt;&lt;/span&gt;Leuschke&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AuthorSName&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publisher_Name&amp;gt;&lt;/span&gt;Sipes and Sons&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publisher_Name&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Publishing_Date&amp;gt;&lt;/span&gt;1979-10-02&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Publishing_Date&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Edition&amp;gt;&lt;/span&gt;4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Edition&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;Volumes&amp;gt;&lt;/span&gt;6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Volumes&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline1&amp;gt;&lt;/span&gt;899 Daugherty Brooks&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline1&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddressline2&amp;gt;&lt;/span&gt;Stellastad&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddressline2&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;PAddresscode&amp;gt;&lt;/span&gt;27145&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PAddresscode&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContactTelephone&amp;gt;&lt;/span&gt;(604)992-042&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContactTelephone&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Book&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/PorterhouseLibrary&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;validating-an-xml-document&quot;&gt;Validating an XML document&lt;/h1&gt;
+
+&lt;p&gt;Validating an XML document is crucial for Porterhouse Library’s database being defined according to XML schema, wherein constraints on information storage and data types apply to avoid anomalous runtime. To make my XML schema valid, the crux of it should have elements defined as either a simple type (text only) or complex type (attributes and/or child elements).&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--this is simple type--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ISBN&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;string”/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--and this is complex type--&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;element&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;complexType&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;sequence&amp;gt;&lt;/span&gt;
+...
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sequence&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/complexType&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;At the top of the document, we declare &lt;span style=&quot;font-family: Consolas&quot;&gt;?xml version=”1.0”?&lt;/span&gt; and include &lt;span style=&quot;font-family: Consolas&quot;&gt;xs:schema&lt;/span&gt; which gives definition to the Porterhouse Library root element. You may have seen that there is no xs: prefix above, so we follow through with &lt;span style=&quot;font-family: Consolas&quot;&gt;xmlns:xs=”http://www.3.org/2001/XMLSchema&lt;/span&gt;, which announces the document namespace, datatypes, and elements. Root element tags should be closed before the rules of the schema can be added, which may be ended with &amp;lt;/xs:schema&amp;gt;. Once the XML Schema is complete, we should, associate this XML schema with the Porterhouse Library XML document from the definition of its root element like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;PorterhouseLibrary&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://
+www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;xsi:noNamespaceSchemaLocation=&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;PLdata.xsd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Referencing XML Schema in the XML document&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We can continue with this approach or convert the XML document to yield an XSD document which can be parsed by a validator as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:schema&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;attributeFormDefault=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unqualified&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;elementFormDefault=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;qualified&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;xmlns:xs=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Bookdata&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:complexType&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:sequence&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;maxOccurs=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unbounded&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Book&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:complexType&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:sequence&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ISBN&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AvgLoan_4y&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:unsignedByte&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AvgRequest_4y&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:unsignedByte&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AuthorFName&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AuthorSName&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Publisher_Name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Publishing_Date&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:date&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Edition&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:unsignedByte&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Volumes&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:unsignedByte&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PAddressline1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PAddressline2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PAddresscode&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;xs:element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ContactTelephone&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs:string&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:sequence&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:complexType&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:element&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:sequence&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:complexType&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:element&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/xs:schema&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Valid XSD document – Porterhouse Library&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;steps-to-display-xml-on-w3&quot;&gt;Steps to display XML on W3&lt;/h1&gt;
+
+&lt;p&gt;Much like a function, a transformer needs an input, and for XML to be displayed, two documents need to be parsed. The first is an XSLT document - an XML application, forming part of the Extensible Style Sheet Language (XSL) that is responsible for processing sources to render new source trees at run time. So we need XSLT to display the source of an XML document, our second input. This necessitates a template that declares control over element namespaces (prefix xsl). This offers output data instructions that relate the PorterhouseLibrary source tree with attributes. In so doing, the template matches class nodes from the source document, and specifies the result of the tree. We start the beginning of the XSLT like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!--the XSLT style sheet is an XML document--&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:stylesheet&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;xmlns:xsl=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/XSL/Transform&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;&amp;lt;!—specifies namespace and
+prefix xsl--&amp;gt;&lt;/span&gt;
+
+… &lt;span class=&quot;cp&quot;&gt;&amp;lt;!—root template goes here--&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A comment is mentioned with reference to a ‘root template’ in the code directly above. This is a description of the process that outputs root node content. It is needed when an XSLT document is parsed, as the processer will first identify the rules applying to the root node of the Porterhouse XML document. We start this sub-template with &lt;span style=&quot;font-family: Consolas&quot;&gt;xsl:template match=&lt;/span&gt; to tell the transformer to match the root node PorterhouseLibrary from the XML source document, and end with &lt;span style=&quot;font-family: Consolas&quot;&gt;xsl:template&lt;/span&gt;. In between the two, rules and parameters are defined that applies to the content of the PorterhouseLibrary root and all its children such as, tables, colour, and alignments. Below, I choose to fill the void with code such that the XSLT will display a table called Book Information. It aims to show the Title and ISBN Number of three book entry tuples using &lt;span style=&quot;font-family: Consolas&quot;&gt;xsl:value-of&lt;/span&gt;element to output node content by declaring string values.&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:stylesheet&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:xsl=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/1999/XSL/Transform&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:output&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;html&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:template&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;match=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Book Information&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bgcolor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#dcdcdc&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align:left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align:left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ISBN Number&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:for-each&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PorterhouseLibrary/Book&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:value-of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Title&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;
+	                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;xsl:value-of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ISBN&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+                         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+                     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:for-each&amp;gt;&lt;/span&gt;
+                 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+             &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:template&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/xsl:stylesheet&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;transform&quot;&gt;Transform&lt;/h1&gt;
+
+&lt;p&gt;The XLST cannot do what it has been asked without being processed together with the wellformed XML document in 5.1 to yield HTML. It is the reason why I inserted &lt;span style=&quot;font-family: Consolas&quot;&gt;xsl:output method=”html”&lt;/span&gt; into the header information in Figure 5.6, which sets the processors output method accordingly. The transformation process boils down the Porterhouse XML document into a new one, matching templates as it processes it source tree node.&lt;/p&gt;
+
+&lt;h1 id=&quot;display&quot;&gt;Display&lt;/h1&gt;
+
+&lt;p&gt;Something new is created whenever the XLST transform is run so one can always reorganise elements and build on the data we have – in my view, following familiar lines with Mayer’s (1988) extension ideology. This is unlike CSS, which is also limited by a strict ordering of text that follows the sequence of input data, but which may still be applied post output (Ladd &amp;amp; O’Donnell, 2001, p. 394 &lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;). The rendered result of the Porterhouse XML document is known as serialization, and, as such transformation is not just for want of HTML, but for variable [1..*] data stream outputs (Amiano, et al., 2006, p. 80 &lt;sup id=&quot;fnref:fn2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Book Information&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bgcolor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#dcdcdc&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align:left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align:left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ISBN Number&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Deleniti&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;978-2-8691-4951-9&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Est&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;978-2-5076-0558-2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Velit&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;978-1-5357-4263-4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/xmlhtmlrender.svg&quot; width=&quot;25%&quot; height=&quot;25%&quot; style=&quot;display: block; margin: 0 auto&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Rendered XML in HTML&lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Ladd, E. &amp;amp; O’Donnell, J., 2001. Platinum Edition Using XHTML, XML and Java 2. First ed. Que Publishing. &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Amiano, M., D’Cruz, C., Ethier, K. &amp;amp; Thomas, M. D., 2006. XML: Problem - Design -Solution. Firt ed. Indianna, US: John Wiley &amp;amp; Sons. &lt;a href=&quot;#fnref:fn2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>O-O class modeling</title>
+   <link href="http://localhost:4000/2020/05/25/oo-class-modelling"/>
+   <updated>2020-05-25T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/05/25/OO-class-modelling</id>
+   <content type="html">&lt;p&gt;This blog shows how a new dental system was developed for a small dental practice using O-O class modelling architecture.&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;span style=&quot;font-family:Arial&quot;&gt;Root_administrator&lt;/span&gt; with different functions from a &lt;span style=&quot;font-family:Arial&quot;&gt;General_administrator&lt;/span&gt;. It may be assumed that the remaining staff classes can also follow suit to fulfil inheritance from an intermediary General_administrator class. Studying the problem statment yields core entities:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!--&lt;embed src=&quot;/assets/images/emptyclasses.svg&quot;&gt;--&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/emptyclasses.svg&quot; alt=&quot;initclass&quot; title=&quot;Initial Classes&quot; /&gt;
+&lt;!--&lt;img src=&quot;/assets/images/emptyclasses.svg&quot;&gt;--&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Initial classes acertained from problem statement&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The classes are arranged in the manner of class inheritance e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// methods and fields&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// extends keyword for inheritance&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Subcontractor&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// methods and fields of Person &lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// methods and fields of Subcontractor&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/preinheritance.svg&quot; alt=&quot;preinherit&quot; title=&quot;Pre-inheritance&quot; /&gt;
+&lt;br /&gt;
+&lt;em&gt;Figure 2 Preliminary class structure&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;span style=&quot;font-family:Arial&quot;&gt;Subcontractor&lt;/span&gt; class has an opposite discriminator set. A subclass of &lt;span style=&quot;font-family:Arial&quot;&gt;Subcontractor&lt;/span&gt;class cannot be a combined instance of another subclass, but could be extended – that is, other types of Subcontractor ‘S’ may be stored in the database.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/inheritance.svg&quot; alt=&quot;inherit&quot; title=&quot;inheritance&quot; /&gt;
+&lt;br /&gt;
+&lt;em&gt;Figure 3 Formal inheritance - S&lt;/em&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Methods and fields are added to the preliminary class structure via associations (including aggregration and qualifiers - figure 4,  and a final draft class structure is built - figure 5:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/association.svg&quot; alt=&quot;ass&quot; title=&quot;Association&quot; /&gt;
+&lt;br /&gt;
+&lt;em&gt;Figure 4 Class association User – spT_Case&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/classdiagram.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 5 First draft class diagram&lt;/em&gt;
+&lt;br /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Class associations</title>
+   <link href="http://localhost:4000/2020/05/25/class-associations"/>
+   <updated>2020-05-25T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/05/25/Class-associations</id>
+   <content type="html">&lt;p&gt;Where there is a persistent non-hierarchal relation between at least two classifiers, and their instantiated links have common semantics and structures, an ‘association’ is formed. This means that an association is both conceptually and physically disposed, for if class &lt;em&gt;C&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; has a binary association &lt;em&gt;A&lt;/em&gt; with class &lt;em&gt;C&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt;, a given object of the former will be related to the latter.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/classbinary.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Class binary association&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clinical_director--patient&quot;&gt;Clinical_Director – Patient&lt;/h3&gt;
+
+&lt;p&gt;Operation &lt;span style=&quot;font-family:Consolas; color:green;&quot;&gt;getReport()&lt;/span&gt; is defined in the &lt;span style=&quot;font-family:Arial;&quot;&gt;Patient&lt;/span&gt; class preliminary diagram in my earlier blog. This refers to a named method that vests object behaviour bound by a ‘contract or obligation’ of the Patient classifier to disclose records. In other words, a &lt;span style=&quot;font-family:Arial;&quot;&gt;Patient&lt;/span&gt; object has responsibility to give information about itself at the call of knowing objects, so class methods and attribute visibilities are set to public. This is ‘need to know’ management information for a &lt;span style=&quot;font-family:Arial;&quot;&gt;Clinical_Director&lt;/span&gt; object related to an arity &lt;strong&gt;m&lt;/strong&gt; of one:many &lt;span style=&quot;font-family:Arial;&quot;&gt;Patient&lt;/span&gt; objects.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/objectdiagram.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 2 Object diagram&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A collection class should be used to gather the instances of &lt;span style=&quot;font-family:Arial;&quot;&gt;Patient&lt;/span&gt; objects with each having a reference kept in a vector implementing Java library &lt;span style=&quot;font-family:Consolas; color:green;&quot;&gt;java.util&lt;/span&gt; 
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/assovector.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 3 Class binary association&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;orthodontist--dental-assistant&quot;&gt;Orthodontist – Dental assistant&lt;/h3&gt;
+
+&lt;p&gt;A use case with a precondition ‘A Dentist must write their instructions in the Patient referral case.’ sets us on course to finding an association between &lt;span style=&quot;font-family:Arial;&quot;&gt;Orthodontist&lt;/span&gt; and &lt;span style=&quot;font-family:Arial;&quot;&gt;Dental_Assistant&lt;/span&gt;. A dentist may devolve this precondition to dental assistants who would locate the appropriate Orthodontist to write an instruction email. An &lt;span style=&quot;font-family:Arial;&quot;&gt;Orthodontist&lt;/span&gt; object, from a collection, returns details of the chosen practitioner to outsource. Physically, this association is ‘bi-directional’ with multiplicity &lt;span style=&quot;font-family:Arial;&quot;&gt;[1..*]&lt;/span&gt; at either end.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/biobject.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 3 Object diagram – Bi-directional links in varying notation&lt;/em&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/plauassociation.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 4 Plausible association Dental_Assistant – Orthodontist&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The association diagram in Figure 4 is missing intermediary elements. This is because use case 1.3 states that it is a &lt;span style=&quot;font-family:Arial;&quot;&gt;Root_administrator&lt;/span&gt; object that sends, but not writes, a commissioning email to an Orthodontist. It also confirms that this communication is associated with a ‘referral queue hub’ to which cases are sent. The sequence between each class can be summarised in an n-array association.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/n-array.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 5 Plausible n-array association&lt;/em&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Attributes for a person class</title>
+   <link href="http://localhost:4000/2019/12/01/attributes-for-a-person-class"/>
+   <updated>2019-12-01T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2019/12/01/Attributes-for-a-person-class</id>
+   <content type="html">&lt;p&gt;While the transitivity of generalisation passes &lt;span style=&quot;font-family:Arial&quot;&gt;{abstract}Person&lt;/span&gt; class features to multiple child classes, each can have their own additional attributes and operations encapsulated. Class &lt;span style=&quot;font-family:Arial&quot;&gt;User&lt;/span&gt;, for example, has already a unique set of methods, but needs additional attributes such that they ‘partition the universe of objects’ in class &lt;span style=&quot;font-family:Arial&quot;&gt;{abstract}Person&lt;/span&gt; for utility - Dathan &amp;amp; Ramnath (2015)&lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. If a class &lt;span style=&quot;font-family:Arial&quot;&gt;User&lt;/span&gt; is found to be particular useful, and needs extra attributes, a new class can extend from it with the added attributes and methods. To discover attributes that are undefinable for an &lt;span style=&quot;font-family:Arial&quot;&gt;{abstract}Person&lt;/span&gt; class is to find classes that are what Meyer refers to as open for extension so code can be added as an ‘extension’ of the baseclass (Meyer, 1988 &lt;sup id=&quot;fnref:fn2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// class hierarchy extension&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// User attributes&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Concrete subclasses have two parts. The first, a derived hidden part, and an incremental extended part, forming a ‘substitutable’ subclass for its parent &lt;span style=&quot;font-family:Arial&quot;&gt;{abstract}Person&lt;/span&gt; – Liskov Substitution Principle (1988). A User then will have five attributes that cannot constitute a &lt;span style=&quot;font-family:Arial&quot;&gt;Person&lt;/span&gt;. The first, a (1) &lt;span style=&quot;font-family:Arial&quot;&gt;UserIDn&lt;/span&gt;, - something a Subcontractor cannot possess too – is added with an «invariant» constraint. The rationale for this is that every user will have a user identification number that is not null thereby forming an inheritance contract (Bruegge &amp;amp; Dutoit, 2010 &lt;sup id=&quot;fnref:fn3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;). (2) username, and private login (3) password for a Person is necessary for users to access the system. Since users are employees of the ODS, it would be useful toreveal their National Insurance number (4) &lt;span style=&quot;font-family:Arial&quot;&gt;nINumber&lt;/span&gt; for Pay-As-You-Earn tax. Analysis of use case 1.3 indicates that ODS employees have variable functionality that extends so an enumeration of (5) &lt;span style=&quot;font-family:Arial&quot;&gt;authorisation&lt;/span&gt;, is included in the &lt;span style=&quot;font-family:Arial&quot;&gt;User&lt;/span&gt; class.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/derivedatt.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Dervice attributes&lt;/em&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/derivedclasses.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 2 Five attributes and Java code&lt;/em&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nINumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorisation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Enumeration&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;root_administrator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;general_administrator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;guest_patient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Dathan &amp;amp; Ramnath, 2015. Object-Oriented Analysis, Design and Implementation: An Integrated Approach (Undergraduate Topics in Computer Science) &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Meyer, B., 1988. Object-oriented Software Construction. First ed. Santa Barbara, CA:Prentice-Hall. &lt;a href=&quot;#fnref:fn2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Bruegge &amp;amp; Dutoit, 2010. Object-Oriented Software Engineering Using UML, Patterns, and Java: Pearson New International Edition &lt;a href=&quot;#fnref:fn3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Z notation</title>
+   <link href="http://localhost:4000/2019/02/20/z-notation"/>
+   <updated>2019-02-20T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2019/02/20/Z-notation</id>
+   <content type="html">&lt;p&gt;I have written this short note on how to write formal specification in the Z notation. Z (after the German mathematician Ernst Zermelo) is a langauage popularised in the 90’s at Oxford and IBM which uses mathematics to create schemas that describe and model computer systems. Here are my particulars:
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/z.svg&quot; width=&quot;80%&quot; height=&quot;80%&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>UIs of yore</title>
+   <link href="http://localhost:4000/2019/02/20/uis-of-yore"/>
+   <updated>2019-02-20T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2019/02/20/UIs of yore</id>
+   <content type="html">&lt;p&gt;I do not think ‘entity life history’ is a common place term in today’s dev communities. These are dialogue diagrams used in the 80’s which I think are tremendously useful for modeling the logic of user interface (UI) interaction. I am talking &lt;u&gt;front-end&lt;/u&gt; development in the days of Amstrad. Lest we forget, here is an abstract from a report I wrote using the techniques:-&lt;/p&gt;
+
+&lt;h1 id=&quot;41-ahc-dialogue-structure-diagram&quot;&gt;4.1 AHC dialogue structure diagram&lt;/h1&gt;
+
+&lt;h2 id=&quot;411-function-definition&quot;&gt;4.1.1 Function definition&lt;/h2&gt;
+
+&lt;p&gt;A set of SSADM factored elementary processes descriptions based on (Appendix) (1.1.1…1.1.4) constitute a class of function that triggers an update to system survey report data with a Manager’s cottage appraisal.&lt;/p&gt;
+
+&lt;h2 id=&quot;412-user-interface-ui-specification&quot;&gt;4.1.2 User interface (UI) specification&lt;/h2&gt;
+
+&lt;p&gt;Based on its function definition I produce an input/output (I/O) description for ‘Process appraisal’ containing data items that make up the final output dialogue.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;From&lt;/th&gt;
+      &lt;th&gt;To&lt;/th&gt;
+      &lt;th&gt;Dataflow&lt;/th&gt;
+      &lt;th&gt;Data Content&lt;/th&gt;
+      &lt;th&gt;Comments&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a.&lt;/td&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;Survey report&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;Surveydetails&lt;br /&gt;Value&lt;/td&gt;
+      &lt;td&gt;Survey report is received. Details incorporate written information fields only about the property, plus a survey value. OwnerName abbreviates (Forename, Surname).&lt;br /&gt;CottageAddress abbreviates each line of an address.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;M1&lt;/td&gt;
+      &lt;td&gt;Survey report&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;Surveydetails&lt;br /&gt;Value&lt;/td&gt;
+      &lt;td&gt;Survey report is manually stored on receipt for reference.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;M1&lt;/td&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;Survey report&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;Surveydetails&lt;br /&gt;Value&lt;/td&gt;
+      &lt;td&gt;Survey report is retrieved manually as reference for input request number&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.1.3&lt;/td&gt;
+      &lt;td&gt;D1&lt;/td&gt;
+      &lt;td&gt;Survey&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;/td&gt;
+      &lt;td&gt;Survey request number from the Survey report is entered into the system.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;D1&lt;/td&gt;
+      &lt;td&gt;1.1.3&lt;/td&gt;
+      &lt;td&gt;Survey report&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;CottageAddress&lt;br /&gt;OwnerName&lt;/td&gt;
+      &lt;td&gt;The system outputs cottage and owner details.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;M1&lt;/td&gt;
+      &lt;td&gt;1.1.3&lt;/td&gt;
+      &lt;td&gt;Survey report&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;Surveydetails&lt;br /&gt;Value&lt;/td&gt;
+      &lt;td&gt;Survey report is retrieved manually to check owner and property details. We are not told whether survey report at this point is transient data.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.1.4&lt;/td&gt;
+      &lt;td&gt;D1&lt;/td&gt;
+      &lt;td&gt;Survey&lt;/td&gt;
+      &lt;td&gt;SurveyRequest#&lt;br /&gt;OwnerName CottageAddress PriceCategory ReasonDetail&lt;/td&gt;
+      &lt;td&gt;PriceCategory depends on Value  in survey report, determining acceptance, while RejectReason is varchar&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;412-dialogue-structure&quot;&gt;4.1.2 Dialogue Structure&lt;/h1&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Activity and sequence architecture</title>
+   <link href="http://localhost:4000/2018/08/12/acitivty-and-sequence"/>
+   <updated>2018-08-12T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2018/08/12/Acitivty-and-sequence</id>
+   <content type="html">&lt;p&gt;As you will see in Figure 3, when we use a directed graph with nodes that denotes components and control elements of use case, the execution semantics suffices to represent the stepwise actions of its activity diagrammatically. This feature is inherent in an Activity Diagram, but the means of controlling flow is what adds to the uniqueness of its UML in my view. This is owing to the ability to specify actions based on Petri token principles (Reisig, 2012, p. 3&lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;). In other words, actions can be conceptualised as activated events &lt;em&gt;e&lt;/em&gt; in places &lt;em&gt;p&lt;/em&gt; whenever it receives a passing dot (Seidl, et al., 2012, p. 146&lt;sup id=&quot;fnref:fn2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/petrinet.svg&quot; alt=&quot;petrinet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Petri Net (PN) (a) before event (b) after event&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/act.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 2 Activity diagram&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;Inter-object behaviour is the essence of a Sequence Diagram. If we wanted to specify how partnering objects interact in a use case, this exchange can be plotted as a distribution of sequential messages over time. Accordingly, objects are bound by state transitions with a lifeline connected by message calls that fulfils an executive task. On the flip side, static semantics parallel class organisation used to identify ‘missing objects’ (Bruegge &amp;amp; Dutoit, 2010, p. 185&lt;sup id=&quot;fnref:fn3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;). So, sequence diagrams are different, for we can cross-reference against the UML’s taxonomy in respect to the structure and behaviour of an objects life. Syntactically, its construct is hierarchical, conforming to an ordered branch of roles &lt;em&gt;r&lt;/em&gt;, classes, &lt;em&gt;c&lt;/em&gt; and methods &lt;em&gt;m&lt;/em&gt; (Li, et al., 2004, pp. 5-8&lt;sup id=&quot;fnref:fn4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;object data=&quot;http://localhost:4000/assets/images/sequence.svg&quot; width=&quot;250&quot; height=&quot;250&quot; type=&quot;application/pdf&quot;&gt;&lt;/object&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 3 (a) Sequence (b) hierarchy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/seq.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 4 Sequence diagram&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Petri Nets - An introduction. First ed. Berlin : Springer-Verlag. &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Seidl, M., Scholz, M., Huemer , C. and Kappel , G., 2012. UML@Classroom - An Introduction to Object-Oriented Modeling. First ed. Heidelberg, Germany : Springer International Publishing &lt;a href=&quot;#fnref:fn2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Bruegge, B. and Dutoit, A.H., 2010. System design: Decomposing the system. &lt;a href=&quot;#fnref:fn3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Li, X., Liu, Z. and Jifeng, H., 2004. A formal semantics of UML sequence diagram. Macau, 2004 Australian Software Engineering Conference. Proceedings. &lt;a href=&quot;#fnref:fn4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SOAP 🧼 API development</title>
+   <link href="http://localhost:4000/2018/05/21/soap-api-notes"/>
+   <updated>2018-05-21T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2018/05/21/SOAP-API-notes</id>
+   <content type="html">&lt;p&gt;My analysis and design of a web service from a report that I wrote concerning the use of a Simple Object Access Protocol (SOAP) API.&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/webservice/webservice.htm&quot; width=&quot;1050&quot; height=&quot;7090&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Relational Algebra</title>
+   <link href="http://localhost:4000/2018/03/08/relational-algebra"/>
+   <updated>2018-03-08T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2018/03/08/Relational-algebra</id>
+   <content type="html">&lt;p&gt;This is an abstract from a report of mine that I wrote that converts functional requirements from a vehicle garage business specification into formalised contraints using relational algebra.&lt;/p&gt;
+
+&lt;object data=&quot;/assets/webpages/relational_algebra/relational_algebra.htm&quot; width=&quot;1050&quot; height=&quot;5925&quot; type=&quot;text/html&quot; /&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>State legal contraints</title>
+   <link href="http://localhost:4000/2018/03/07/states"/>
+   <updated>2018-03-07T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2018/03/07/States</id>
+   <content type="html">&lt;p&gt;Constraints in the use case are derived from non-functional requirements vis-à-vis common dental operations. In particular, recorded information about a Patient must be saved. This ruleis elicited from Standards for the Dental Team 4.1 (General Dental Council, 2014 &lt;sup id=&quot;fnref:fn1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;). The second constraint, that Patient records must be accessible and kept securely for a maximum 30 years on retention, is partly legislative. The legal parts of this constraint would be retrievable storage of commissioning emails saved to the server via, say, a JavaMail API. The UML standard does allows for Object Constraint Language to supplement models (Object Management Group, 2006&lt;sup id=&quot;fnref:fn2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;). Thus ‘a commissioning email can be stored 30 years minimum can be added as a note that:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Context Email inv: self.years-&amp;gt;size()&amp;gt;=30&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A Patient &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; could have a modifier that allows visibility for classes only contained within its package to call the fetchEmail method which reduces the extendibility needed for General_administrator.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/pkg.svg&quot; /&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1 Package diagram showing a restricted message&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, time is not statutory since Schedule 1 Data Protection Act (DPA (2008))&lt;sup id=&quot;fnref:fn4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; gives no definite scale, leaving the NHS to provide the said years (Information Governance Alliance, 2016&lt;sup id=&quot;fnref:fn5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:fn5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;). On the other hand, security of information and access is from the DPA, which constrains a nested email to the binary ‘state’ of being Saved to the server.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/state0.svg&quot; /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/images/state1.svg&quot; alt=&quot;state1&quot; title=&quot;States&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 2 Composite state diagram storing an email&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;saved&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;storeEmail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;saved&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;Private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;saved&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Figure 3 State pseudocode for candidate email class&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:fn1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;General Dental Council, 2014. Focus on standards. Available at: https://standards.gdcuk.org/assets/images/pdf/Standards%20for%20the%20Dental%20Team.pdf &lt;a href=&quot;#fnref:fn1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Object Management Group, 2006. Object Constraint Language - Available Specification Version 2.0. s.l.:Object Management Group &lt;a href=&quot;#fnref:fn2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Data Protection Act 2018 Available at: https://www.legislation.gov.uk/ukpga/2018/12/schedule/1/enacted &lt;a href=&quot;#fnref:fn4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:fn5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Records Management Code of Practice for Health and Social Care. Available at: https://digital.nhs.uk/records-management-code-of-practice-for-health-andsocial-care-2016 &lt;a href=&quot;#fnref:fn5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>My Leadership Award 🎉</title>
+   <link href="http://localhost:4000/2016/04/15/leadership-award"/>
+   <updated>2016-04-15T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2016/04/15/Leadership-Award</id>
+   <content type="html">&lt;p&gt;I have ended up leading my team’s Knowledge Management (KM) lately ovseering the application administration of our SharePoint servers and secured an award!&lt;/p&gt;
+
+&lt;style&gt;
+img {
+  border: 1px solid #555;
+}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kmaward.png&quot; alt=&quot;Award&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The agenda for the benchmarking exercise supports the current intranet project to replace the on premises SharePoint 2013 environment with a SharePoint online environment&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;embed src=&quot;/assets/images/hmtlogical.svg&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;
+
+&lt;center&gt;&lt;i&gt;Current Logical Architecture&lt;/i&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;embed src=&quot;/assets/images/hmtphysical.svg&quot; width=&quot;80%&quot; height=&quot;80%&quot; /&gt;
+
+&lt;p&gt;&lt;i&gt;Current Physical Architecture&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;HMT currently hosts Intranet sites on SharePoint 2013 using customised CSS, Jscript, and Master Pages based on templates. However, SharePoint online has now rolled out more user centric comms site templates tailored for intranet info portals, rather than Teams, which should be easier to meet requirements. I have been working with Corporate Services to Improve collaboration internally within HMT to replace the current on premises SharePoint 2013 environment with the SharePoint online environment to reduce licensing cost and technical footprint within on-premises data centres. KM helps to achieve these goals along with reducing the dependency on email for sharing of data and documentation.&lt;/p&gt;
+
+&lt;center&gt;&lt;embed src=&quot;/assets/images/kmbm.png&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;i&gt;Benmakring scores out of 5 - total 97% &lt;/i&gt;&lt;/center&gt;
+
+&lt;p&gt;Knowledge KM is a discipline spanning about 30 years, which has grown to become crucial to today’s IT software industry. It is concerned primarily with information systems and how they can be utitlised to acheive optimised workflows, security, and compliance.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
