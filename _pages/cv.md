@@ -8,8 +8,8 @@ permalink: /about/cv
 
 #### Career
 
-* Director, Software Architect ~ counsel.config <span style="font-family:Consolas; color:Grey; font-size: 15px;">Present</span>
-* Senior Engineer ~ British Government <span style="font-family:Consolas; color:Grey; font-size: 15px;">2015 - Present </span>
+* Director ~ counsel.config <span style="font-family:Consolas; color:Grey; font-size: 15px;">Present</span>
+* Technical Architect ~ British Government <span style="font-family:Consolas; color:Grey; font-size: 15px;">2015 - Present </span>
 * Lawyer ~ Citizens Advice and Lloyds Banking Group <span style="font-family:Consolas; color:Grey; font-size: 15px;">2009 - 2015</span>
 * Engineer ~ Tectus Architecture <span style="font-family:Consolas; color:Grey; font-size: 15px;">2007 - 2009</span><br><br>
 
