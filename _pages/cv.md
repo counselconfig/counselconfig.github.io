@@ -30,3 +30,5 @@ permalink: /about/cv
 * Legal informatics 
 * Technical advice
 * Mentoring
+
+[https://counselconfig.github.io/.](https://github.com/counselconfig)
