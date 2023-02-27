@@ -6,13 +6,9 @@ permalink: /about/cv
 
 ### Dominic Love
 
-Computer Scientist Lawyer
-<br><br>
-
-
 #### Career
 
-* Director, Chief Software Architect ~ counselconfig.com <span style="font-family:Consolas; color:Grey; font-size: 15px;">Present</span>
+* Director, Chief Software Architect ~ counsel.config <span style="font-family:Consolas; color:Grey; font-size: 15px;">Present</span>
 * Senior Engineer ~ British Government <span style="font-family:Consolas; color:Grey; font-size: 15px;">2015 - Present </span>
 * Lawyer ~ Citizens Advice and Lloyds Banking Group <span style="font-family:Consolas; color:Grey; font-size: 15px;">2009 - 2015</span>
 * Engineer ~ Tectus Architecture <span style="font-family:Consolas; color:Grey; font-size: 15px;">2007 - 2009</span><br><br>
