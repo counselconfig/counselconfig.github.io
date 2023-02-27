@@ -31,4 +31,4 @@ permalink: /about/cv
 * Technical advice
 * Mentoring
 
-[https://counselconfig.github.io/.](https://github.com/counselconfig)
+[https://counselconfig.github.io](https://github.com/counselconfig)
